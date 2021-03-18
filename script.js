@@ -20,8 +20,8 @@ while (counter++ < max) {
   a.setAttribute('target', '_blank');
   a.appendChild(img);
   const li = document.createElement('li');
-  li.appendChild(msg);
   li.appendChild(a);
+  li.appendChild(msg);
   $('.container').appendChild(li);
   const randomUrl = `${baseUrl}/${counter}`;
   getSinglePhoto(randomUrl).then(url => {
