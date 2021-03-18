@@ -9,13 +9,13 @@ function getSinglePhoto(url) {
 }
 
 const baseUrl = "https://source.unsplash.com/random?";
-let counter = 1;
+let counter = 0;
 let max = 60;
 
-while (counter < max) {
+while (counter++ < max) {
   const randomUrl = `${baseUrl}/${counter}`;
   const msg = document.createElement('span');
-  msg.textContent = 'Loading...';
+  msg.textContent = `Loading #${counter}`;
   const img = document.createElement('img');
   const a = document.createElement('a');
   a.setAttribute('target', '_blank');
@@ -30,5 +30,4 @@ while (counter < max) {
     img.classList.add('fade-in');
     msg.classList.add('fade-out');
   });
-  counter++;
 }
