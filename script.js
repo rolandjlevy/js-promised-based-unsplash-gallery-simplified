@@ -10,10 +10,9 @@ function getSinglePhoto(url) {
 
 const baseUrl = "https://source.unsplash.com/random?";
 let counter = 0;
-let max = 60;
+const max = 60;
 
 while (counter++ < max) {
-  const randomUrl = `${baseUrl}/${counter}`;
   const msg = document.createElement('span');
   msg.textContent = `Loading #${counter}`;
   const img = document.createElement('img');
@@ -24,6 +23,7 @@ while (counter++ < max) {
   li.appendChild(msg);
   li.appendChild(a);
   $('.container').appendChild(li);
+  const randomUrl = `${baseUrl}/${counter}`;
   getSinglePhoto(randomUrl).then(url => {
     a.href = url;
     img.src = url;
