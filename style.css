@@ -8,7 +8,6 @@ body {
 
 * {
   box-sizing: border-box;
-  /* border: 1px solid red; */
 }
 
 ul.container {
@@ -21,7 +20,7 @@ ul.container {
 
 ul.container > li {
   position: relative;
-  transform: translate(-5px, 5px);
+  transform: scale(1);
   flex: 1 1 15rem;
   min-height: calc(30vmax);
   max-height: calc(50vmax - var(--margin));
@@ -30,12 +29,14 @@ ul.container > li {
   transition-property: transform, box-shadow; 
   transition-duration: 0.2s, 0.2s;
   animation-timing-function: linear;
-  box-shadow: -5px 5px 5px 0 #000000aa;
+  box-shadow: 0 0 5px 5px #000000aa;
+  z-index: 0;
 }
 
 ul.container > li:hover {
-  transform: translate(0, 0);
-  box-shadow: -10px 10px 10px 0 #000000aa;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 10px #000000aa;
+  z-index: 1;
 }
 
 ul.container > li > span {
@@ -100,14 +101,14 @@ footer {
 button.load {
   margin: 20px 0;
   padding: 5px 10px;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   cursor: pointer;
   border-radius: 5px;
   border: none;
-  background-color: #ff8800;
+  background-color: hsl(228, 5%, 55%);
   transition: background-color 0.2s ease;
 }
 
 button.load:hover {
-  background-color: #ff9900;
+  background-color: hsl(36, 100%, 55%);
 }

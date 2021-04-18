@@ -4,7 +4,7 @@ function getSinglePhoto(url) {
   return new Promise((resolve, reject) => {
     fetch(url)
     .then(data => resolve(data.url))
-    .catch(error => reject({error}))
+    .catch(error => reject(error))
   });
 }
 
@@ -30,6 +30,9 @@ function loadPhotos() {
       img.src = url;
       img.classList.add('fade-in');
       msg.classList.add('fade-out');
+    })
+    .catch(error => {
+      console.log({error});
     });
     counter++;
   }
