@@ -1,6 +1,7 @@
 const $ = (el) => document.querySelector(el);
+const create = (el) => document.createElement(el);
 
-function getSinglePhoto(url) {
+const getSinglePhoto = (url) => {
   return new Promise((resolve, reject) => {
     fetch(url)
     .then(data => resolve(data.url))
@@ -14,33 +15,30 @@ let max = 10;
 
 function loadPhotos() {
   while (counter <= max) {
-    const msg = document.createElement('span');
+    const msg = create('span');
     msg.textContent = `Loading #${counter}`;
-    const img = document.createElement('img');
-    const a = document.createElement('a');
+    const img = create('img');
+    const a = create('a');
     a.setAttribute('target', '_blank');
     a.appendChild(img);
-    const li = document.createElement('li');
+    const li = create('li');
     li.appendChild(a);
     li.appendChild(msg);
     $('.container').appendChild(li);
-    const randomUrl = `${baseUrl}/${counter}`;
+    const randomUrl = `${baseUrl}/${counter++}`;
     getSinglePhoto(randomUrl).then(url => {
       a.href = url;
       img.src = url;
       img.classList.add('fade-in');
       msg.classList.add('fade-out');
     })
-    .catch(error => {
-      console.log({error});
-    });
-    counter++;
+    .catch(error => console.log({error}));
   }
 }
-
-loadPhotos();
 
 $('.load').addEventListener('click', (e) => {
   max += 10;
   loadPhotos();
 });
+
+loadPhotos();

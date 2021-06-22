@@ -1,5 +1,7 @@
 # Unplash Gallery simplified
 
+> Infinite images fetched from the Unsplash API, loading 10 at a time. Made with just 44 lines of vanilla JavaScript
+
 ### Links 🔗
 - [Play the demo](https://js-promised-based-unsplash-gallery-simplified.rolandjlevy.repl.co/)
 - [View the source code](https://replit.com/@RolandJLevy/js-promised-based-unsplash-gallery-simplified)
