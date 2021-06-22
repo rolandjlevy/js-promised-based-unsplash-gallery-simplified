@@ -10,8 +10,7 @@ const getSinglePhoto = (url) => {
 }
 
 const baseUrl = "https://source.unsplash.com/random?";
-let counter = 1;
-let max = 10;
+let counter = 1, max = 10;
 
 function loadPhotos() {
   while (counter <= max) {
@@ -39,6 +38,7 @@ function loadPhotos() {
 $('.load').addEventListener('click', (e) => {
   max += 10;
   loadPhotos();
+  window.scrollTo(0, document.body.scrollHeight);
 });
 
 loadPhotos();

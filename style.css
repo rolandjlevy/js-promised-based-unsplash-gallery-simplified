@@ -10,6 +10,10 @@ body {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ul.container {
   list-style: none;
   padding: 0;
