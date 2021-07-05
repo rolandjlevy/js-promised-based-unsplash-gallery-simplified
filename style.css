@@ -20,6 +20,7 @@ ul.container {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
+  opacity: 0;
 }
 
 ul.container > li {
