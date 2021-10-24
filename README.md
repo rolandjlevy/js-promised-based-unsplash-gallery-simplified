@@ -1,4 +1,4 @@
-# Unplash Gallery
+# Infinite Unplash Gallery
 
 > Infinite image gallery fetched from the [Unsplash API](https://source.unsplash.com), loads 10 images at a time. Made with just 44 lines of vanilla JavaScript! ⭐
 
